@@ -1,4 +1,8 @@
 Moviedb::Application.routes.draw do
+
+  # get '/movies', :to => 'movies#index'
+  resources :movies
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
