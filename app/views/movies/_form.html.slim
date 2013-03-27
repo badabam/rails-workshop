@@ -1,8 +1,10 @@
 = form_for @movie do |form|
+
   p
     = form.label :title
     = form.text_field :title
     = @movie.errors[:title].to_sentence
+
   p
     = form.label :genre
     = form.collection_select :genre_id,
@@ -10,17 +12,20 @@
       :id,
       :name,
       :include_blank => true
+
   p
     = form.label :year
     = form.text_field :year
     = @movie.errors[:title].to_sentence
+
   p
     = form.label :length
     = form.text_field :length
+
   p
     = form.label :language
     = form.text_field :language
 
-    = form.submit
+  = form.submit
 
 = link_to "Back", movies_path
