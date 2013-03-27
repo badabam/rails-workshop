@@ -1,0 +1,8 @@
+h1 All the movies
+p= link_to "New movie", new_movie_path
+
+ul= render @movies
+
+/ %ul
+/   - @movies.each do |movie|
+/     %li= link_to movie.title, movie
