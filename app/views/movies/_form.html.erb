@@ -5,6 +5,11 @@
     <%= @movie.errors[:title].to_sentence %>
   </p>
   <p>
+    <%= form.label :genre %>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name,
+    :include_blank => true %>
+  </p>
+  <p>
     <%= form.label :year %>
     <%= form.text_field :year %>
     <%= @movie.errors[:title].to_sentence %>
@@ -19,5 +24,6 @@
   </p>
 
     <%= form.submit %>
-
 <% end %>
+
+<%= link_to "Back", movies_path %>

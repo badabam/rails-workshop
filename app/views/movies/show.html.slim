@@ -2,7 +2,12 @@ h1
   = @movie.title
   - if @movie.year.present?
     | (#{@movie.year})
+
+/ view genre if available
 p
+  - if @movie.genre.present?
+    | Genre: #{ link_to @movie.genre.name, @movie.genre }
+  br
   | Length: #{@movie.length} minutes
   br
   | Language: #{@movie.language}
