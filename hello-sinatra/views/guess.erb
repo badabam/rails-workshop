@@ -1,0 +1,12 @@
+<h3>Du hast noch <%= $game.tries %> Versuche!</h3>
+<% if @result %>
+  <p>
+    Du hast die Zahl <%= params[:guess] %> geraten. Diese Zahl war
+    leider zu <%= @result == :too_high ? 'hoch' : 'niedrig' %>
+  </p>
+<% end %>
+
+<form action="/guess" method="post">
+  <input type="text" autofocus name="guess">
+  <input type="submit" value="Raten!">
+</form>
